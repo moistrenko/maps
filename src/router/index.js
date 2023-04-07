@@ -8,12 +8,12 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/maps/",
+    path: "./",
     name: "home",
     component: HomeView,
   },
   {
-    path: "/maps/auth",
+    path: "./auth",
     name: "auth",
     component: AuthView,
   },
