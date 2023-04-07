@@ -1,5 +1,12 @@
-## login test_user
-## password Q1w2e3r4
+## login 
+```
+test_user
+```
+
+## password 
+```
+Q1w2e3r4
+```
 ## Project setup
 ```
 npm install
