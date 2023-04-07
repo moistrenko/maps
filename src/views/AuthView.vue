@@ -12,6 +12,7 @@
         class="form-input"
         type="password"
         placeholder="Password"
+        autocomplete="off"
       />
       <button class="btn">send</button>
       <div v-if="error">Введены неверные учетные данные</div>
