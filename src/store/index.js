@@ -1,0 +1,22 @@
+import Vue from "vue";
+import Vuex from "vuex";
+
+Vue.use(Vuex);
+
+export default new Vuex.Store({
+  state: {
+    isAuth: false,
+  },
+  getters: {
+    isAuth: (state) => {
+      return state.isAuth;
+    },
+  },
+  mutations: {
+    setAuth(state, payload) {
+      state.isAuth = payload;
+    },
+  },
+  actions: {},
+  modules: {},
+});
