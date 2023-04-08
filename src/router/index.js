@@ -8,18 +8,18 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "./",
+    path: "./maps/",
     name: "home",
     component: HomeView,
   },
   {
-    path: "./auth",
+    path: "./maps//auth",
     name: "auth",
     component: AuthView,
   },
   {
     path: "*",
-    redirect: "./",
+    redirect: "./maps/",
   },
 ];
 
@@ -30,7 +30,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.fullPath !== "./auth" && !store.state.isAuth) next("./auth");
+  if (to.fullPath !== "./maps/auth" && !store.state.isAuth) next("./maps/auth");
   else next();
 });
 
