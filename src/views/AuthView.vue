@@ -1,13 +1,13 @@
 <template>
   <div class="auth">
     <form class="auth__form" @submit.prevent="sendForm">
-      <input
+      <base-input
         v-model="login"
         class="form-input"
         type="text"
         placeholder="Login"
       />
-      <input
+      <base-input
         v-model="password"
         class="form-input"
         type="password"
@@ -21,10 +21,14 @@
 </template>
 
 <script>
+import BaseInput from "@/components/BaseInput.vue";
 import { mapMutations } from "vuex";
 
 export default {
   name: "AuthView",
+  components: {
+    BaseInput,
+  },
   data() {
     return {
       login: "",
@@ -69,8 +73,6 @@ export default {
 
 .form-input {
   margin-bottom: 20px;
-  height: 40px;
-  padding: 5px;
 }
 
 .btn {
