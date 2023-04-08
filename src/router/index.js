@@ -13,7 +13,7 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "./maps//auth",
+    path: "./maps/auth",
     name: "auth",
     component: AuthView,
   },
