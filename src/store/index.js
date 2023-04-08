@@ -7,11 +7,7 @@ export default new Vuex.Store({
   state: {
     isAuth: false,
   },
-  getters: {
-    isAuth: (state) => {
-      return state.isAuth;
-    },
-  },
+  getters: {},
   mutations: {
     setAuth(state, payload) {
       state.isAuth = payload;

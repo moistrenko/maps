@@ -1,28 +1,25 @@
 <template>
   <div class="home">
-    <input type="text" v-model.lazy="search" placeholder="Search" />
+    <base-input type="text" placeholder="Search" v-model="search" />
     <div class="maps-wrapper">
-      <ul class="sities-list" v-if="cities.length">
-        <li v-for="city in cities" :key="city.place_id">
-          <a href="#" @click.prevent="changeMap(city)">{{
-            city.display_name
-          }}</a>
-        </li>
-      </ul>
-      <div v-else>Список городов пуст</div>
-      <BaseMaps :currentCity="currentCity" />
+      <base-city-list :cities="cities" @changeMap="changeMap" />
+      <base-maps :currentCity="currentCity" />
     </div>
   </div>
 </template>
 
 <script>
 import BaseMaps from "@/components/BaseMaps.vue";
+import BaseCityList from "@/components/BaseCityList.vue";
+import BaseInput from "@/components/BaseInput.vue";
 import axios from "axios";
 
 export default {
   name: "HomeView",
   components: {
     BaseMaps,
+    BaseCityList,
+    BaseInput,
   },
   data() {
     return {
@@ -57,7 +54,7 @@ export default {
   justify-content: space-between;
   padding: 40px;
 }
-.sities-list li {
+.cities-list li {
   text-align: left;
 }
 a {
