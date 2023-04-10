@@ -22,7 +22,7 @@ export default {
       setAuth: "setAuth",
     }),
   },
-  mounted() {
+  created() {
     if (localStorage.getItem("isAuth")) this.setAuth(true);
   },
 };

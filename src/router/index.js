@@ -28,9 +28,15 @@ const router = new VueRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
-  if (to.fullPath !== "/auth" && !store.state.isAuth) next("/auth");
-  else next();
+router.beforeResolve(async (to, from, next) => {
+  const path = await (to.fullPath !== "/auth");
+  const isAuth = !store.state.isAuth;
+  if (path && isAuth) {
+    next("/auth");
+    return;
+  } else {
+    next();
+  }
 });
 
 export default router;
